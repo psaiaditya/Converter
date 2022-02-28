@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+    <style>
+      body{
+       
+        display: flex;
+        justify-content: center;
+        margin-top:30%;
+        background-color: black;
+       
+      }
+      .container{
+          
+          background: aqua;
+          cursor: pointer;
+          text-align: center;
+          font-size: 30px;
+          font-weight: bold;
+          font-family: 'Courier New', Courier, monospace;
+          color: white;
+          border-radius: 50px;
+          position: absolute;
+          top:15%;
+          left:15%;
+          transform: translate(10%,10%);
+      }
+      input{
+          border:1px solid black;
+          padding:14px;
+          margin-top: 10px;
+          cursor: pointer;
+      }
+      button:hover{
+        background: gray;
+      }
+      button{
+        border:1px solid black;
+          padding:14px;
+          margin-top: 10px;
+          background-color:darkorange;
+          cursor: pointer;
+          color:white;
+      }
+      #swap{
+        background-color:darkblue;
+        color: white;
+      }
+      .swap{
+        color:darkblue;
+      }
+      p{
+          width:98%;
+          height: 100px;
+          background:aquamarine;
+          margin-top: 10px;
+          margin-left: 3px;
+          display: flex;
+          text-align: center;
+          justify-content: center;
+      }
+      h5{
+        padding: 10px;
+        color: orangered;
+        text-decoration: un;
+      }
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+      <h5>Binary to Decimal -> use Convert</h5>
+      <h5 class="swap">Decimal to Binary -> use Swap</h5>
+      <input type="text" id="input">
+      <button id="button">Convert</button>
+      <button id="swap">Swap</button>
+      <p class="p">0</p>
+
+    </div>
+</body>
+<script>
+var button=document.getElementById("button");
+var swap=document.getElementById("swap");
+ button.onclick=function(){
+
+   var v=document.querySelector("#input").value;
+   document.querySelector('.p').innerHTML=parseInt(v,2).toString(10)
+ }
+swap.onclick=function(){
+  var v=document.querySelector("#input").value;
+   document.querySelector('.p').innerHTML=parseInt(v>>>0).toString(2)
+}
+</script>
+</html>
